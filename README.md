@@ -1,66 +1,58 @@
-## Foundry
+# Vault Manager 🏦
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A smart contract system to manage Ethereum vaults, allowing multiple users to deposit and withdraw funds securely.
 
-Foundry consists of:
+## 🚀 Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Deposit and withdraw ETH
+- Support for multiple users
+- Custom vault logic
+- Written in Solidity and tested using Foundry
 
-## Documentation
+## 🛠️ Built With
 
-https://book.getfoundry.sh/
+- [Foundry](https://book.getfoundry.sh/)
+- Solidity ^0.8.0
 
-## Usage
+## 🧪 Running Tests
 
-### Build
+Make sure you have [Foundry installed](https://book.getfoundry.sh/getting-started/installation.html), then:
 
-```shell
-$ forge build
-```
+```bash
+forge test
 
-### Test
+## 📦 Deployment
 
-```shell
-$ forge test
-```
+    To deploy your contract:
 
-### Format
+    1.Set environment variables in a .env file:
 
-```shell
-$ forge fmt
-```
+    PRIVATE_KEY=your_private_key
+    ETH_RPC_URL=https://sepolia.infura.io/v3/your_project_id
 
-### Gas Snapshots
+    2.Run the deploy script:
 
-```shell
-$ forge snapshot
-```
+    forge script script/DeployVault.s.sol --broadcast --rpc-url $ETH_RPC_URL
 
-### Anvil
 
-```shell
-$ anvil
-```
+## 🔍 Verifying on Etherscan
 
-### Deploy
+To verify after deployment:
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+forge verify-contract --contract src/VaultManager.sol:VaultManager <DEPLOYED_ADDRESS> $ETHERSCAN_API_KEY
 
-### Cast
 
-```shell
-$ cast <subcommand>
-```
+## 📂 Structure
 
-### Help
+├── src/              # Contract source files
+├── test/             # Test files
+├── script/           # Deployment scripts
+├── broadcast/        # Deployment logs
+├── foundry.toml      # Foundry config
+└── .env              # Env vars (not committed)
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+
+## 📄 License
+
+MIT
+
