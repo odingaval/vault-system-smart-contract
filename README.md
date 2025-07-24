@@ -21,7 +21,7 @@ Make sure you have [Foundry installed](https://book.getfoundry.sh/getting-starte
 ```bash
 forge test
 
-## 📦 Deployment
+📦 Deployment
 
     To deploy your contract:
 
@@ -35,14 +35,14 @@ forge test
     forge script script/DeployVault.s.sol --broadcast --rpc-url $ETH_RPC_URL
 
 
-## 🔍 Verifying on Etherscan
+🔍 Verifying on Etherscan
 
 To verify after deployment:
 
 forge verify-contract --contract src/VaultManager.sol:VaultManager <DEPLOYED_ADDRESS> $ETHERSCAN_API_KEY
 
 
-## 📂 Structure
+📂 Structure
 
 ├── src/              # Contract source files
 ├── test/             # Test files
@@ -52,7 +52,7 @@ forge verify-contract --contract src/VaultManager.sol:VaultManager <DEPLOYED_ADD
 └── .env              # Env vars (not committed)
 
 
-## 📄 License
+📄 License
 
 MIT
 
